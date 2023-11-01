@@ -55,4 +55,6 @@ export const imageArr = [
         id:11,
         img: img11,
     },
-]
+];
+
+export const imgArr2 = [img1, img2, img3, img4, img5]
