@@ -1,10 +1,8 @@
-import './App.css';
-import Main from './usingReactBeautifulDnd/main';
+import "./App.css";
+import Main from "./usingReactDnd/main";
 
 function App() {
-  return (
-    <Main />
-  );
+  return <Main />;
 }
 
 export default App;
