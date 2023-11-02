@@ -6,6 +6,7 @@ const Body = () => {
   const [hoveredDragItemsIdx, setHoveredDragItemsIdx] = useState(null);
   const [fromIdx, setFromIdx] = useState(null);
 
+  const [hoveredId, setHoveredId] = useState(null);
 
   const handleDragStart = (e, index) => {
     e.dataTransfer.setData("index", index);
@@ -14,9 +15,8 @@ const Body = () => {
   const handleDragOver = (e, index) => {
     // const fromIndex = e.dataTransfer.getData("index");
     e.preventDefault();
-    console.log(e)
-    setHoveredDragItemsIdx(index);
-    const fromIndex = e.dataTransfer.getData("index");
+    console.log(e);
+    // const fromIndex = e.dataTransfer.getData("index");
     // const updatedImages = [...images];
     // const [draggedImage] = updatedImages.splice(fromIndex, 1);
     // updatedImages.splice(index, 0, draggedImage);
@@ -50,7 +50,8 @@ const Body = () => {
           className={`grid_item ${index === 0 && "grid_item_featured"}`}
           key={singleImg?.id}
         >
-          <img src={singleImg?.img} alt="" />
+          Hi there {singleImg.id}
+          {/* <img src={singleImg?.img} alt="" /> */}
         </div>
       ))}
     </div>
