@@ -1,6 +1,6 @@
 .grid_container {
   display: grid;
-  /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); */
+  grid-template-columns: repeat(5, minmax(200px, 1fr));
   gap: 20px;
   margin: 20px;
 }
@@ -12,8 +12,8 @@
 }
 
 .grid_item_featured {
-    grid-column: span 2;
-    grid-row: span 2;
+  grid-column: span 2;
+  grid-row: span 2;
 }
 
 .grid_item img {
