@@ -1,8 +1,8 @@
 import "./App.css";
-import Main from "./usingReactDnd/main";
+import AwesomeGallery from "./landing";
 
 function App() {
-  return <Main />;
+  return <AwesomeGallery />;
 }
 
 export default App;

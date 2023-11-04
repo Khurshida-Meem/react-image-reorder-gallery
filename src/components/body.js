@@ -3,10 +3,6 @@ import { imageArr } from "../utils/imageArr";
 
 const Body = () => {
   const [images, setImages] = useState(imageArr);
-  const [hoveredDragItemsIdx, setHoveredDragItemsIdx] = useState(null);
-  const [fromIdx, setFromIdx] = useState(null);
-
-  const [hoveredId, setHoveredId] = useState(null);
 
   const handleDragStart = (e, index) => {
     e.dataTransfer.setData("index", index);
@@ -33,10 +29,6 @@ const Body = () => {
     updatedImages.splice(toIndex, 0, draggedImage);
     setImages(updatedImages);
   };
-
-  const reorder = () => {
-    
-  }
 
 
   return (
