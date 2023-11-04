@@ -1,14 +1,14 @@
 import React, { useRef } from "react";
 import { useDrag, useDrop } from "react-dnd";
 
-const SingleImg = ({ id, img, moveItem, index }) => {
+const SingleImg = ({ id, img, checked, moveItem, index, handleChecked }) => {
   const ref = useRef(null);
 
   const [, drop] = useDrop({
     accept: "GRID_ITEM",
     drop: (draggedItem) => {
-      const draggedId  =  draggedItem.id;
-        if (draggedId !== index) {
+      const draggedId = draggedItem.id;
+      if (draggedId !== index) {
         moveItem(draggedId, index);
       }
     },
@@ -30,16 +30,26 @@ const SingleImg = ({ id, img, moveItem, index }) => {
 
   const opacity = isDragging ? 0.4 : 1;
 
+  
 
   return (
     <div
-    className="grid_item"
-    ref={ref}
-    style={{
-      opacity,
-    }}
+      className="grid_item "
+      ref={ref}
+      style={{
+        opacity,
+      }}
     >
-      <img src={img} alt="" />
+      <div className={checked ? "_checked" : "color_overlay"}>
+        <input
+          checked={checked}
+          className="_checkbox"
+          style={{display: checked && "block"}}
+          type="checkbox"
+          onClick={() => handleChecked(id)}
+        />
+        <img src={img} alt="" />
+      </div>
     </div>
   );
 };

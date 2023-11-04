@@ -22,6 +22,43 @@
   height: auto;
 }
 
+.color_overlay {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: block;
+}
+
+.grid_item:hover .color_overlay::before {
+  content: "";
+  background: #000;
+  opacity: 0.6;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+._checkbox {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 1.3rem;
+  height: 1.5rem;
+  display: none;
+}
+
+.grid_item:hover ._checkbox{
+  display: block;
+}
+
+._checked{
+  position: relative;
+  background: #a7a7a7;
+  opacity: 0.6;
+}
+
 @media screen and (max-width: 768px) {
   .grid_container {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));

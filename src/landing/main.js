@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import { DndProvider, useDrop } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
+import { useDrop } from "react-dnd";
 import { imageArr } from "../utils/imageArr";
 import SingleImg from "./singleImg";
 
 const Main = () => {
   const [images, setImages] = useState(imageArr);
-
   const [, drop] = useDrop({
     accept: "GRID_ITEM",
   });
@@ -20,10 +18,30 @@ const Main = () => {
     setImages(updatedItems);
   };
 
+  const handleChecked = (id) => {
+    const shallowImages = [...images];
+    const updatedItems = shallowImages?.map((image) => {
+      if (image?.id === id) {
+        return {
+          ...image,
+          checked: !image.checked,
+        };
+      }
+      return image;
+    });
+    setImages(updatedItems);
+  };
+
   return (
     <div ref={drop} className="grid_container">
       {images.map((item, index) => (
-        <SingleImg key={item.id} {...item} moveItem={moveItem} index={index} />
+        <SingleImg
+          handleChecked={handleChecked}
+          key={item.id}
+          {...item}
+          moveItem={moveItem}
+          index={index}
+        />
       ))}
     </div>
   );
