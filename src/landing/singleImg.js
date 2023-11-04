@@ -43,7 +43,7 @@ const SingleImg = ({ id, img, checked, moveItem, index, handleChecked }) => {
       <div className={checked ? "_checked" : "color_overlay"}>
         <input
           checked={checked}
-          className="_checkbox"
+          className="checkbox grid_item_checkbox"
           style={{display: checked && "block"}}
           type="checkbox"
           onClick={() => handleChecked(id)}

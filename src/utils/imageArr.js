@@ -14,7 +14,7 @@ export const imageArr = [
     {
         id:1,
         img: img1,
-        checked: true
+        checked: false
     },
     {
         id:2,

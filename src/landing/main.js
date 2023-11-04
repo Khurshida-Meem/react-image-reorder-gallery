@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDrop } from "react-dnd";
-import { imageArr } from "../utils/imageArr";
 import SingleImg from "./singleImg";
 
-const Main = () => {
-  const [images, setImages] = useState(imageArr);
+const Main = ({images, setImages}) => {
+  
   const [, drop] = useDrop({
     accept: "GRID_ITEM",
   });
@@ -33,7 +32,7 @@ const Main = () => {
   };
 
   return (
-    <div ref={drop} className="grid_container">
+    <div ref={drop} className="grid_container container">
       {images.map((item, index) => (
         <SingleImg
           handleChecked={handleChecked}
