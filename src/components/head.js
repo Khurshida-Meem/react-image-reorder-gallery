@@ -24,6 +24,12 @@ const Head = ({ images, setImages }) => {
     }
   };
 
+  const handleDelete = () => {
+    const shallowImages = [...images];
+    const updatedImages = shallowImages?.filter((image) => !image.checked);
+    setImages(updatedImages);
+  };
+
   return (
     <div className="container">
       <div className="d-flex justify-content-between">
@@ -39,7 +45,9 @@ const Head = ({ images, setImages }) => {
           </p>
         </div>
         <div>
-          <p style={{ color: "red", cursor: "pointer" }}>Delete Files</p>
+          <p onClick={handleDelete} style={{ color: "red", cursor: "pointer" }}>
+            Delete Files
+          </p>
         </div>
       </div>
     </div>
