@@ -23,14 +23,13 @@ const SingleImg = ({ id, img, checked, moveItem, index, handleChecked }) => {
     type: "GRID_ITEM",
     item: { id, img },
     collect: (monitor) => ({
+      handlerId: monitor.getHandlerId(),
       isDragging: monitor.isDragging(),
     }),
   });
   drag(drop(ref));
 
-  const opacity = isDragging ? 0.4 : 1;
-
-  
+  const opacity = isDragging ? 0 : 1;
 
   return (
     <div
@@ -44,7 +43,7 @@ const SingleImg = ({ id, img, checked, moveItem, index, handleChecked }) => {
         <input
           checked={checked}
           className="checkbox grid_item_checkbox"
-          style={{display: checked && "block"}}
+          style={{ display: checked && "block" }}
           type="checkbox"
           onClick={() => handleChecked(id)}
         />
