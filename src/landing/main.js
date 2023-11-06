@@ -8,6 +8,7 @@ const Main = ({ images, setImages }) => {
     accept: "GRID_ITEM",
   });
 
+
   const moveItem = (draggedId, hoverId) => {
     const updatedItems = [...images];
     // remove dragged item and insert it into new position
@@ -32,7 +33,7 @@ const Main = ({ images, setImages }) => {
   };
 
   return (
-    <div ref={drop} className="grid_container container">
+    <div ref={drop} className="grid_container container mb-5">
       {images.map((item, index) => (
         <SingleImg
           handleChecked={handleChecked}
