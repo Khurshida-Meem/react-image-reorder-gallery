@@ -1,7 +1,7 @@
 import React from "react";
 import { useDrop } from "react-dnd";
 import SingleImg from "./singleImg";
-import addImage from "../assets/images/add_image.png";
+import AddImage from "../components/addImage";
 
 const Main = ({ images, setImages }) => {
   const [, drop] = useDrop({
@@ -43,7 +43,7 @@ const Main = ({ images, setImages }) => {
         />
       ))}
       <div className="grid_item">
-        <img src={addImage} alt="" />
+        <AddImage images={images} setImages={setImages} />
       </div>
     </div>
   );

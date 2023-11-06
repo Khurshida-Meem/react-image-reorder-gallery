@@ -19,6 +19,7 @@
   background-color: white;
   text-align: center;
   border: 1px solid #ccc;
+  overflow: hidden;
 }
 
 .grid_item img {
@@ -69,12 +70,12 @@
 
 @media screen and (max-width: 768px) {
   .grid_container {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media screen and (max-width: 480px) {
   .grid_container {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
   }
 }
