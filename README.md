@@ -1,1 +1,4 @@
------ on going
+- A grid layout with featured image
+- Reorder image by dragging
+- delete image by checked with checkbox
+- Add new image 
