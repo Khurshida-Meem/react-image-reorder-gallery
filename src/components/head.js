@@ -32,7 +32,7 @@ const Head = ({ images, setImages }) => {
 
   return (
     <div className="container">
-      <div className="d-flex justify-content-between">
+      <div className="d-flex justify-content-between mt-2">
         <div className="d-flex">
           <input
             onClick={handleMasterCheckClick}

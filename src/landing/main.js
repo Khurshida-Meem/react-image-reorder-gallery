@@ -42,7 +42,7 @@ const Main = ({ images, setImages }) => {
           index={index}
         />
       ))}
-      <div className="grid_item">
+      <div style={{cursor: "pointer"}} className="grid_item">
         <AddImage images={images} setImages={setImages} />
       </div>
     </div>
